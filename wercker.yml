@@ -1,5 +1,6 @@
 build:
-    box: google/golang
+    #box: google/golang
+    box: armbuild/golang
     steps:
 
     # Test the project
