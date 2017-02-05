@@ -32,5 +32,5 @@ deploy:
         cmd: ./app
         tag: $WERCKER_GIT_COMMIT
         ports: "5000"
-        repository: slepech/docker/
+        repository: slepech/docker
         registry: https://registry.hub.docker.com
