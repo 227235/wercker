@@ -24,7 +24,7 @@ build:
         code: cp app cities-service.json cities-controller.json "$WERCKER_OUTPUT_DIR"
 
 deploy:
-    box: google/golang
+    box: armbuild/golang
     steps:
     # use the scratch step to build a container from scratch based on the files present
     - internal/docker-scratch-push:
