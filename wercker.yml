@@ -23,18 +23,14 @@ build:
         code: cp app cities-service.json cities-controller.json "$WERCKER_OUTPUT_DIR"
 
 deploy:
-    box: google/golang
+    box: golang
     steps:
     # use the scratch step to build a container from scratch based on the files present
     - internal/docker-scratch-push:
-        #username: $QUAY_USERNAME
-        username: slepech
-        #password: $QUAY_PASSWORD
-        password: test123
+        username: $QUAY_USERNAME
+        password: $QUAY_PASSWORD
         cmd: ./app
         tag: $WERCKER_GIT_COMMIT
         ports: "5000"
-        #repository: quay.io/wercker/wercker-kubernetes-quay
         repository: slepech/docker/
-        #registry: https://quay.io
         registry: https://registry.hub.docker.com
